@@ -16,6 +16,7 @@ SOURCES += main.cpp\
     src/uavController/CombatControllerImpl.cpp \
     src/uavController/ReconControllerImpl.cpp \
     src/uavController/SupplyControllerImpl.cpp \
+    src/uavData/uavDatabase.cpp \
     src/uavFactory/uavFactoryImpl.cpp \
     src/uavLogger/uavLogger.cpp \
     src/uavMath/myrect.cpp \
@@ -33,6 +34,8 @@ HEADERS  += src/uavController/automaticDutiesProvider.h \
     src/uavController/ReconControllerImpl.h \
     src/uavController/SupplyController.h \
     src/uavController/SupplyControllerImpl.h \
+    src/uavData/uavDataStruct.h \
+    src/uavData/uavDatabase.h \
     src/uavFactory/uavFactory.h \
     src/uavFactory/uavFactoryImpl.h \
     src/uavLogger/uavLogger.h \
