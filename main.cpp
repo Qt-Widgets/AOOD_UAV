@@ -2,6 +2,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 
+#include "mainwindow.h"
 #include "src/uavMath/myrect.h"
 
 int main(int argc, char *argv[])
@@ -27,5 +28,7 @@ int main(int argc, char *argv[])
     view->setScene(scene);
     view->show();
 
+    MainWindow w;
+    w.show();
     return a.exec();
 }
