@@ -8,6 +8,7 @@
 #ifndef UAVLOGGER_H_
 #define UAVLOGGER_H_
 
+#include <QTextEdit>
 #include <string>
 
 ///-----------------------------------------
@@ -21,6 +22,8 @@ class uavLogger
 {
   public:
 
+    void initialize( QTextEdit* text_box );
+
     virtual ~uavLogger();
 
     ///-------------------------------------
@@ -33,9 +36,12 @@ class uavLogger
 
   private:
 
-    uavLogger() {}
+    uavLogger() { init = false;}
 
     static uavLogger* single_instance;
+
+    QTextEdit* text_box;
+    bool init;
 };
 
 #endif /* UAVLOGGER_H_ */

@@ -6,9 +6,17 @@
  */
 
 #include "uavLogger.h"
-#include <iostream>
 
 uavLogger* uavLogger::single_instance = NULL;
+
+void uavLogger::initialize( QTextEdit* text_box )
+{
+  if( init == false )
+  {
+    this->text_box = text_box;
+    init = true;
+  }
+}
 
 uavLogger::~uavLogger()
 {
@@ -25,5 +33,7 @@ uavLogger* uavLogger::getInstance()
 
 void uavLogger::log( std::string string_to_log )
 {
-  std::cout << string_to_log << std::endl;
+  text_box->moveCursor(QTextCursor::End);
+  text_box->append( QString::fromStdString(string_to_log) );
+  text_box->moveCursor(QTextCursor::End);
 }
