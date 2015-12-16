@@ -6,16 +6,20 @@
 #include <QGraphicsItem>
 #include <QPointF>
 #include <QObject>
-#include "../uavData/uavDataStruct.h"
+#include "uavDataStruct.h"
 
-class uavBaseController : public QObject, public QGraphicsPixmapItem
+class uavObject : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    uavBaseController( QGraphicsItem *parent = 0);
-    ~uavBaseController();
+
+    uavObject( QGraphicsItem *parent = 0);
+    ~uavObject();
+
+    uavData uav_data;
 
 public slots:
+
     void go_to_target();
 
 private:

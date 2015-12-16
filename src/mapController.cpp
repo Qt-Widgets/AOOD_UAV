@@ -1,7 +1,7 @@
 #include "mapcontroller.h"
 
 #include <QGraphicsScene>
-#include "uavController/uavBaseController.h"
+
 
 MapController::MapController()
 {
@@ -12,22 +12,27 @@ MapController::MapController()
     // set the scene
     setScene(scene);
 
-    // create a UAV
-    uavBaseController * uav = new uavBaseController();
-    uav->setPos(250,250);
-
-    // add the tower to scene
-    scene->addItem(uav);
-
     // alter window
     setFixedSize(800,600);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
 }
 
+void MapController::mousePressEvent(QMouseEvent *event)
+{
+  //if left arrow
+  //  uav->rotate
+}
 
-void MapController::mousePressEvent(QMouseEvent *event){
+void MapController::addUavToScene( uavObject* uav )
+{
+  uav->setPos(250,250);
 
+  // add the tower to scene
+  scene->addItem(uav);
+}
 
+void MapController::setPrimaryUav( uavObject* uav )
+{
+  this->uav = uav;
 }

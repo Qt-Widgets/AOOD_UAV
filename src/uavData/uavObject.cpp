@@ -1,4 +1,4 @@
-#include "uavbasecontroller.h"
+#include "uavObject.h"
 
 #include <QPixmap>
 #include <QVector>
@@ -6,14 +6,11 @@
 #include <QPolygonF>
 #include <QPointF>
 #include <QLineF>
-#include "../mapController.h"
 #include <QTimer>
 #include <QGraphicsRectItem>
 
-extern MapController * mapCtrl;
 
-
-uavBaseController::uavBaseController(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
+uavObject::uavObject(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
 {
     // set the graphics
     setPixmap(QPixmap(":/Pictures/pictures/uav.jpg"));
@@ -51,9 +48,9 @@ uavBaseController::uavBaseController(QGraphicsItem *parent) : QObject(), QGraphi
     travel_dest = QPointF(0,800);
 }
 
-uavBaseController::~uavBaseController(){}
+uavObject::~uavObject() {}
 
-void uavBaseController::go_to_target()
+void uavObject::go_to_target()
 {
     this->setPos(x()-16,y()-16);
 

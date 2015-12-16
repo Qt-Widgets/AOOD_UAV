@@ -18,15 +18,17 @@ uavDatabase::~uavDatabase()
     delete uavs[current_uav_id];
 }
 
-void uavDatabase::createUav( uavMissionModes::uavMissionTypesEnum mission )
+uavObject* uavDatabase::createUav( uavMissionModes::uavMissionTypesEnum mission )
 {
-  uavs[current_uav_id] = new uavData();
-  uavs[current_uav_id]->mission_type = mission;
-
   current_uav_id++;
+
+  uavs[current_uav_id] = new uavObject();
+  uavs[current_uav_id]->uav_data.mission_type = mission;
+
+  return uavs[current_uav_id];
 }
 
-uavData* uavDatabase::getUavData( int uav_id )
+uavObject* uavDatabase::getUavData( int uav_id )
 {
   return uavs[uav_id];
 }

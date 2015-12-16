@@ -11,11 +11,12 @@
 #include "src/uavGui/uavButtonActions.h"
 
 class uavDatabase;
+class mapController;
 class uavFactoryImpl;
 class uavOperator;
 class uavAutomaticOperator;
 class uavUserOperator;
-struct uavData;
+class uavObject;
 
 class uavMain : public uavButtonActions
 {
@@ -44,12 +45,14 @@ class uavMain : public uavButtonActions
 
     uavDatabase* uav_database;
 
+    mapController* map_controller;
+
     uavFactoryImpl* uav_factory;
     uavAutomaticOperator* auto_operator;
     uavUserOperator*      user_operator;
 
     uavOperator* current_operator;
-    uavData*     current_uav_data;
+    uavObject*   current_uav;
 };
 
 #endif /* UAVMAIN_H_ */

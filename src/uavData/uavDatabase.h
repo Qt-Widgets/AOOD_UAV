@@ -8,7 +8,7 @@
 #ifndef UAVDATABASE_H_
 #define UAVDATABASE_H_
 
-#include "uavDataStruct.h"
+#include "uavObject.h"
 
 class uavDatabase
 {
@@ -17,15 +17,15 @@ class uavDatabase
     uavDatabase();
     virtual ~uavDatabase();
 
-    void createUav( uavMissionModes::uavMissionTypesEnum mission );
+    uavObject* createUav( uavMissionModes::uavMissionTypesEnum mission );
 
-    uavData* getUavData( int uav_id );
+    uavObject* getUavData( int uav_id );
 
   private:
 
     static const int max_uavs = 10;
 
-    uavData* uavs[ max_uavs + 1 ];
+    uavObject* uavs[ max_uavs + 1 ];
     int current_uav_id;
 };
 

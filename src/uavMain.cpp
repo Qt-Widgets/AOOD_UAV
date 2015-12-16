@@ -7,6 +7,7 @@
 
 #include "uavMain.h"
 #include "src/uavData/uavDatabase.h"
+#include "mapController.h"
 #include "src/uavFactory/uavFactoryImpl.h"
 #include "src/uavOperator/uavOperator.h"
 #include "src/uavOperator/uavAutomaticOperator.h"
@@ -14,11 +15,17 @@
 
 uavMain::uavMain()
 {
-  uav_database = new uavDatabase();
-  uav_database->createUav( uavMissionModes::COMBAT_MISSION );
-  uav_database->createUav( uavMissionModes::COMBAT_MISSION );
-  uav_database->createUav( uavMissionModes::SUPPLY_MISSION );
-  uav_database->createUav( uavMissionModes::RECON_MISSION );
+  uav_database   = new uavDatabase();
+  map_controller = new mapController();
+
+  current_uav = uav_database->createUav( uavMissionModes::COMBAT_MISSION );
+  map_controller->addUavToScene( current_uav );
+  current_uav = uav_database->createUav( uavMissionModes::COMBAT_MISSION );
+  map_controller->addUavToScene( current_uav );
+  current_uav = uav_database->createUav( uavMissionModes::SUPPLY_MISSION );
+  map_controller->addUavToScene( current_uav );
+  current_uav = uav_database->createUav( uavMissionModes::RECON_MISSION );
+  map_controller->addUavToScene( current_uav );
 
   uav_factory = new uavFactoryImpl();
 
@@ -26,7 +33,8 @@ uavMain::uavMain()
   user_operator = new uavUserOperator( uav_factory );
 
   current_operator = auto_operator;
-  current_uav_data = uav_database->getUavData( 1 );
+  current_uav      = uav_database->getUavData( 1 );
+  map_controller->setPrimaryUav( current_uav );
 }
 
 uavMain::~uavMain()
@@ -47,9 +55,9 @@ void uavMain::update()
 
 void uavMain::switchPrimaryUav( int uav_id )
 {
-  current_uav_data = uav_database->getUavData( uav_id );
+  current_uav = uav_database->getUavData( uav_id );
   //set some classes with this.
-
+  map_controller->setPrimaryUav( current_uav );
 }
 
 void uavMain::switchOperator()
