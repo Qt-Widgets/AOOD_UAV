@@ -21,3 +21,13 @@ void MainWindow::initialize( uavButtonActions*  uav_button_actions )
 {
  this->uav_button_actions   = uav_button_actions;
 }
+
+void MainWindow::on_pushButton_13_clicked()
+{
+    uav_button_actions->dropSupplies();
+}
+
+void MainWindow::on_pushButton_16_clicked()
+{
+    uav_button_actions->takePicture();
+}

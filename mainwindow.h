@@ -18,6 +18,9 @@ public:
 
     void initialize( uavButtonActions*  uav_button_actions );
 
+private slots:
+    void on_pushButton_13_clicked();
+
 private:
     Ui::MainWindow *ui;
 
