@@ -31,3 +31,23 @@ void MainWindow::on_pushButton_16_clicked()
 {
     uav_button_actions->takePicture();
 }
+
+void MainWindow::on_pushButton_14_clicked()
+{
+    uav_button_actions->transmitPictures();
+}
+
+void MainWindow::on_pushButton_15_clicked()
+{
+    uav_button_actions->fireMissile();
+}
+
+void MainWindow::on_pushButton_18_clicked()
+{
+    uav_button_actions->fireGun();
+}
+
+void MainWindow::on_pushButton_17_clicked()
+{
+    uav_button_actions->breakEngage();
+}

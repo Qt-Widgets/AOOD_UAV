@@ -34,7 +34,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_7">
      <attribute name="title">
@@ -89,6 +89,45 @@
      <attribute name="title">
       <string>Combat</string>
      </attribute>
+     <widget class="QPushButton" name="pushButton_15">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>115</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Fire Missile</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_17">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>30</y>
+        <width>115</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Break Engage</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_18">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>0</y>
+        <width>115</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Fire Guns</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QTextEdit" name="textEdit">
@@ -132,45 +171,6 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="text">
      <string>Automatic</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_15">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>90</y>
-      <width>115</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_17">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>130</y>
-      <width>115</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_18">
-    <property name="geometry">
-     <rect>
-      <x>-30</x>
-      <y>130</y>
-      <width>115</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
     </property>
    </widget>
   </widget>
