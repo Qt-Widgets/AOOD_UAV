@@ -3,10 +3,13 @@
 #include <QGraphicsView>
 
 #include "mainwindow.h"
+#include "src/uavMain.h"
 #include "src/uavMath/myrect.h"
 
 int main(int argc, char *argv[])
 {
+    uavMain* uav_main = new uavMain();
+
     QApplication a(argc, argv);
 
     //create a scene
@@ -29,6 +32,7 @@ int main(int argc, char *argv[])
     view->show();
 
     MainWindow w;
+    w.initialize(uav_main);
     w.show();
     return a.exec();
 }

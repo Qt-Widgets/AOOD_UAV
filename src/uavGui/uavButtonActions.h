@@ -5,15 +5,18 @@
  *      Author: dgwalthney
  */
 
-#ifndef USERBUTTONACTIONS_H_
-#define USERBUTTONACTIONS_H_
+#ifndef UAVBUTTONACTIONS_H_
+#define UAVBUTTONACTIONS_H_
 
 
-class userButtonActions
+class uavButtonActions
 {
   public:
 
-    virtual ~userButtonActions() {}
+    virtual ~uavButtonActions() {}
+
+    virtual void switchPrimaryUav( int uav_id ) = 0;
+    virtual void switchOperator() = 0;
 
     virtual void fireMissile() = 0;
     virtual void fireGun() = 0;
@@ -28,4 +31,4 @@ class userButtonActions
 };
 
 
-#endif /* USERBUTTONACTIONS_H_ */
+#endif /* UAVBUTTONACTIONS_H_ */

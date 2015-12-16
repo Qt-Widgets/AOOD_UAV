@@ -23,7 +23,7 @@ SOURCES += main.cpp\
     src/uavMath/vector3d.cpp \
     src/uavOperator/uavAutomaticOperator.cpp \
     src/uavOperator/uavUserOperator.cpp \
-    src/AOOD_Project2_Main.cpp \
+    src/uavMain.cpp \
     mainwindow.cpp \
     src/uavController/uavBaseController.cpp
 
@@ -39,12 +39,13 @@ HEADERS  += src/uavController/automaticDutiesProvider.h \
     src/uavData/uavDatabase.h \
     src/uavFactory/uavFactory.h \
     src/uavFactory/uavFactoryImpl.h \
+    src/uavGui/uavButtonActions.h \
     src/uavLogger/uavLogger.h \
     src/uavMath/myrect.h \
     src/uavMath/vector3d.h \
     src/uavOperator/uavAutomaticOperator.h \
     src/uavOperator/uavUserOperator.h \
-    src/uavOperator/userButtonActions.h \
+    src/uavMain.h \
     mainwindow.h \
     src/uavController/uavBaseController.h
 

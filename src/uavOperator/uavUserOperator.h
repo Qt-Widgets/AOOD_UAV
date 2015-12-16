@@ -8,7 +8,7 @@
 #ifndef UAVUSEROPERATOR_H_
 #define UAVUSEROPERATOR_H_
 
-#include "userButtonActions.h"
+#include "../uavGui/uavButtonActions.h"
 
 class uavFactory;
 class SupplyController;
@@ -21,7 +21,7 @@ class CombatController;
 ///  interface so that the GUI knows what buttons
 ///  actions can be done.
 ///-----------------------------------------
-class uavUserOperator : public userButtonActions
+class uavUserOperator //: public userButtonActions
 {
   public:
 
