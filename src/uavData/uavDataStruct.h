@@ -14,21 +14,10 @@
 struct uavData
 {
   int refreshRate;
-  bool rotateL;
-  bool rotateR;
-  bool thrustUav;
-  bool brakeUav;
   int shipAngle;
-  int rotateSlow;
-  int rotateRate;
-  int uavPower;
   int mBrakeCount;
-  double shipDx;
-  double shipDy;
-  int  textDy;
-  int  mFrameNum;
-  bool mPaused;
-  int  mTimerId;
+  double Dx;
+  double Dy;
   bool return_to_base;
   bool night_vision_enabled;
   int uav_id;

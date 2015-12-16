@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/Pictures">
+        <file>pictures/background.png</file>
+        <file>pictures/Ny_satview.jpg</file>
+        <file>pictures/uav.jpg</file>
+    </qresource>
+</RCC>

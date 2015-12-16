@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     src/uavOperator/uavUserOperator.cpp \
     src/uavMain.cpp \
     mainwindow.cpp \
-    src/uavController/uavBaseController.cpp
+    src/uavController/uavBaseController.cpp \
+    src/mapcontroller.cpp
 
 HEADERS  += src/uavController/automaticDutiesProvider.h \
     src/uavController/CombatController.h \
@@ -47,7 +48,11 @@ HEADERS  += src/uavController/automaticDutiesProvider.h \
     src/uavOperator/uavUserOperator.h \
     src/uavMain.h \
     mainwindow.h \
-    src/uavController/uavBaseController.h
+    src/uavController/uavBaseController.h \
+    src/mapcontroller.h
 
 FORMS += \
     mainwindow.ui
+
+RESOURCES += \
+    resources.qrc
