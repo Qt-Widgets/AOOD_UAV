@@ -8,20 +8,20 @@
 #ifndef UAVAUTOMATICOPERATOR_H_
 #define UAVAUTOMATICOPERATOR_H_
 
+#include "uavOperator.h"
+
 class automaticDutiesProvider;
 
 ///-----------------------------------------
 ///  This class handles the automatic operations
 ///  of the UAV.
 ///-----------------------------------------
-class uavAutomaticOperator
+class uavAutomaticOperator : public uavOperator
 {
   public:
 
-    uavAutomaticOperator();
+    uavAutomaticOperator( automaticDutiesProvider* duties_provider );
     virtual ~uavAutomaticOperator();
-
-    void initialize( automaticDutiesProvider* duties_provider );
 
     void update();
 

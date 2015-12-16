@@ -9,10 +9,13 @@
 #define UAVMAIN_H_
 
 #include "src/uavGui/uavButtonActions.h"
-#include "src/uavFactory/uavFactoryImpl.h"
-#include "src/uavOperator/uavAutomaticOperator.h"
-#include "src/uavOperator/uavUserOperator.h"
 
+class uavDatabase;
+class uavFactoryImpl;
+class uavOperator;
+class uavAutomaticOperator;
+class uavUserOperator;
+struct uavData;
 
 class uavMain : public uavButtonActions
 {
@@ -20,6 +23,8 @@ class uavMain : public uavButtonActions
 
     uavMain();
     virtual ~uavMain();
+
+    void update();
 
     virtual void switchPrimaryUav( int uav_id );
     virtual void switchOperator();
@@ -37,10 +42,14 @@ class uavMain : public uavButtonActions
 
   private:
 
+    uavDatabase* uav_database;
+
     uavFactoryImpl* uav_factory;
     uavAutomaticOperator* auto_operator;
     uavUserOperator*      user_operator;
 
+    uavOperator* current_operator;
+    uavData*     current_uav_data;
 };
 
 #endif /* UAVMAIN_H_ */

@@ -9,20 +9,15 @@
 #include "../uavController/automaticDutiesProvider.h"
 #include "../uavLogger/uavLogger.h"
 
-uavAutomaticOperator::uavAutomaticOperator()
+uavAutomaticOperator::uavAutomaticOperator(
+                   automaticDutiesProvider* duties_provider )
 {
-
+  this->duties_provider = duties_provider;
 }
 
 uavAutomaticOperator::~uavAutomaticOperator()
 {
 
-}
-
-void uavAutomaticOperator::initialize(
-                   automaticDutiesProvider* duties_provider )
-{
-  this->duties_provider = duties_provider;
 }
 
 void uavAutomaticOperator::update()
