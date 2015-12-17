@@ -75,9 +75,13 @@ void uavMain::switchPrimaryUav( int uav_id )
   map_controller->setPrimaryUav( current_uav );
 }
 
-void uavMain::switchOperator()
+void uavMain::switchOperator(int new_operator)
 {
-  //switch current_operator pointer here.
+    if(new_operator == 2)
+        current_operator = auto_operator;
+
+    if(new_operator == 1)
+        current_operator = user_operator;
 }
 
 void uavMain::fireMissile()

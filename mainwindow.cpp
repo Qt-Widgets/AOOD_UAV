@@ -56,3 +56,13 @@ void MainWindow::on_pushButton_clicked()
 {
   uav_button_actions->startMission();
 }
+
+void MainWindow::on_radioButton_clicked()
+{
+    uav_button_actions->switchOperator(2);
+}
+
+void MainWindow::on_radioButton_2_clicked()
+{
+    uav_button_actions->switchOperator(1);
+}
