@@ -5,24 +5,21 @@
 #include <QGraphicsPolygonItem>
 #include <QGraphicsItem>
 #include <QPointF>
-#include <QObject>
 #include "uavDataStruct.h"
 
-class uavObject : public QObject, public QGraphicsPixmapItem
+class uavObject : public QGraphicsPixmapItem
 {
-    Q_OBJECT
-public:
+
+  public:
 
     uavObject( QGraphicsItem *parent = 0);
     ~uavObject();
 
     uavData uav_data;
 
-public slots:
+    void updatePosition();
 
-    void go_to_target();
-
-private:
+  private:
 
     QGraphicsPolygonItem * collision_area;
     QPointF travel_dest;

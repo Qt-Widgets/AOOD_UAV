@@ -6,6 +6,7 @@
  */
 
 #include "uavMain.h"
+#include <QTimer>
 #include "src/uavData/uavDatabase.h"
 #include "mapController.h"
 #include "src/uavFactory/uavFactoryImpl.h"
@@ -13,7 +14,7 @@
 #include "src/uavOperator/uavAutomaticOperator.h"
 #include "src/uavOperator/uavUserOperator.h"
 
-uavMain::uavMain()
+uavMain::uavMain() : QObject()
 {
   uav_database   = new uavDatabase();
   map_controller = new mapController();
@@ -47,10 +48,10 @@ uavMain::~uavMain()
   current_operator = 0;
 }
 
-void uavMain::update()
+void uavMain::updateUavs()
 {
   //We need a main loop that gets call every x seconds.
-
+  current_uav->updatePosition();
   current_operator->update();
 }
 
@@ -68,7 +69,12 @@ void uavMain::switchOperator()
 
 void uavMain::fireMissile()
 {
-  user_operator->fireMissile();
+    // connect a timer to attack_target
+    QTimer * timer = new QTimer();
+    connect(timer,SIGNAL(timeout()),this,SLOT(updateUavs()));
+    timer->start(1000);
+
+  //user_operator->fireMissile();
 }
 
 void uavMain::fireGun()
