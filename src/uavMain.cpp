@@ -46,13 +46,18 @@ uavMain::~uavMain()
   delete auto_operator;
   delete user_operator;
   current_operator = 0;
+  current_uav      = 0;
 }
 
 void uavMain::updateUavs()
 {
-  //We need a main loop that gets call every x seconds.
-  current_uav->updatePosition();
-  current_operator->update();
+  uavObject* uav;
+  for(int i = 1; i <=4; i++)
+  {
+    uav = uav_database->getUavData( i );
+    uav->updatePosition();
+    current_operator->update( &uav->uav_data );
+  }
 }
 
 void uavMain::startMission()

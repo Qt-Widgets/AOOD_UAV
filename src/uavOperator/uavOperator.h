@@ -8,6 +8,7 @@
 #ifndef UAVOPERATOR_H_
 #define UAVOPERATOR_H_
 
+struct uavData;
 
 class uavOperator
 {
@@ -15,7 +16,7 @@ class uavOperator
 
     virtual ~uavOperator() {}
 
-    virtual void update() = 0;
+    virtual void update( uavData* uav_data ) = 0;
 };
 
 #endif /* UAVOPERATOR_H_ */

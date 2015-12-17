@@ -11,6 +11,7 @@
 #include "uavOperator.h"
 
 class automaticDutiesProvider;
+struct uavData;
 
 ///-----------------------------------------
 ///  This class handles the automatic operations
@@ -23,7 +24,7 @@ class uavAutomaticOperator : public uavOperator
     uavAutomaticOperator( automaticDutiesProvider* duties_provider );
     virtual ~uavAutomaticOperator();
 
-    void update();
+    virtual void update( uavData* uav_data );
 
   private:
 

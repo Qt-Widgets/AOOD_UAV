@@ -12,6 +12,7 @@
 #include "../uavController/CombatController.h"
 #include "../uavController/MissionModes.h"
 #include "../uavLogger/uavLogger.h"
+#include "src/uavData/uavDataStruct.h"
 
 uavUserOperator::uavUserOperator( uavFactory* uav_factory )
 {
@@ -25,11 +26,9 @@ uavUserOperator::~uavUserOperator()
 
 }
 
-void uavUserOperator::update()
+void uavUserOperator::update( uavData* uav_data )
 {
-  //Update Position
-
-  uavMissionModes::uavMissionTypesEnum mission = uavMissionModes::SUPPLY_MISSION;
+  uavMissionModes::uavMissionTypesEnum mission = uav_data->mission_type;
 
   switch( mission )
   {

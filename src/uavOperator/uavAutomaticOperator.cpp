@@ -8,6 +8,7 @@
 #include "uavAutomaticOperator.h"
 #include "../uavController/automaticDutiesProvider.h"
 #include "../uavLogger/uavLogger.h"
+#include "src/uavData/uavDataStruct.h"
 
 uavAutomaticOperator::uavAutomaticOperator(
                    automaticDutiesProvider* duties_provider )
@@ -20,12 +21,9 @@ uavAutomaticOperator::~uavAutomaticOperator()
 
 }
 
-void uavAutomaticOperator::update()
+void uavAutomaticOperator::update( uavData* uav_data )
 {
   uavLogger::getInstance()->log( "Performing Automatic Operator Update" );
 
-  duties_provider->performMissionDuty( uavMissionModes::COMBAT_MISSION );
-  duties_provider->performMissionDuty( uavMissionModes::RECON_MISSION );
-  duties_provider->performMissionDuty( uavMissionModes::SUPPLY_MISSION );
-  duties_provider->performMissionDuty( uavMissionModes::NO_MISSION );
+  duties_provider->performMissionDuty( uav_data->mission_type );
 }

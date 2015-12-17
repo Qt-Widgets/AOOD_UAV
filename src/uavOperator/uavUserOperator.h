@@ -14,6 +14,7 @@ class uavFactory;
 class SupplyController;
 class ReconController;
 class CombatController;
+struct uavData;
 
 ///-----------------------------------------
 ///  This class handles the user operations
@@ -28,7 +29,7 @@ class uavUserOperator : public uavOperator
     uavUserOperator( uavFactory* uav_factory );
     virtual ~uavUserOperator();
 
-    virtual void update();
+    virtual void update( uavData* uav_data );
 
     void fireMissile();
     void fireGun();

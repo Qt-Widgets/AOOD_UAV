@@ -45,6 +45,7 @@ HEADERS  += src/uavController/automaticDutiesProvider.h \
     src/uavLogger/uavLogger.h \
     src/uavMath/myrect.h \
     src/uavMath/vector3d.h \
+    src/uavOperator/uavOperator.h \
     src/uavOperator/uavAutomaticOperator.h \
     src/uavOperator/uavUserOperator.h \
     src/uavMain.h \
