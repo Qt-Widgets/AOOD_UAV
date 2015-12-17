@@ -51,3 +51,8 @@ void MainWindow::on_pushButton_17_clicked()
 {
     uav_button_actions->breakEngage();
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+
+}
