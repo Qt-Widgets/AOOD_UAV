@@ -24,6 +24,7 @@ uavObject* uavDatabase::createUav( uavMissionModes::uavMissionTypesEnum mission 
 
   uavs[current_uav_id] = new uavObject();
   uavs[current_uav_id]->uav_data.mission_type = mission;
+  uavs[current_uav_id]->uav_data.uav_id = current_uav_id;
 
   return uavs[current_uav_id];
 }
