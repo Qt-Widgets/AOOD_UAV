@@ -29,6 +29,7 @@ class uavMain : public QObject,
     uavMain();
     virtual ~uavMain();
 
+    virtual void startMission();
     virtual void switchPrimaryUav( int uav_id );
     virtual void switchOperator();
 

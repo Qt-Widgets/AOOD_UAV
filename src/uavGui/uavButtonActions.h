@@ -15,6 +15,7 @@ class uavButtonActions
 
     virtual ~uavButtonActions() {}
 
+    virtual void startMission() = 0;
     virtual void switchPrimaryUav( int uav_id ) = 0;
     virtual void switchOperator() = 0;
 

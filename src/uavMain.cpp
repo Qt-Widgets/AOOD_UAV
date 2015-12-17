@@ -55,6 +55,14 @@ void uavMain::updateUavs()
   current_operator->update();
 }
 
+void uavMain::startMission()
+{
+  // connect a timer to attack_target
+  QTimer * timer = new QTimer();
+  connect(timer,SIGNAL(timeout()),this,SLOT(updateUavs()));
+  timer->start(1000);
+}
+
 void uavMain::switchPrimaryUav( int uav_id )
 {
   current_uav = uav_database->getUavData( uav_id );
@@ -69,12 +77,7 @@ void uavMain::switchOperator()
 
 void uavMain::fireMissile()
 {
-    // connect a timer to attack_target
-    QTimer * timer = new QTimer();
-    connect(timer,SIGNAL(timeout()),this,SLOT(updateUavs()));
-    timer->start(1000);
-
-  //user_operator->fireMissile();
+  user_operator->fireMissile();
 }
 
 void uavMain::fireGun()

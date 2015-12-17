@@ -54,5 +54,5 @@ void MainWindow::on_pushButton_17_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-
+  uav_button_actions->startMission();
 }
