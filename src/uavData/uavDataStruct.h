@@ -26,13 +26,10 @@ struct uavData
   bool night_vision_enabled;
   int uav_id;
   int missile_inventory;
-<<<<<<< Updated upstream
   int current_pic_count;
-=======
   int direction;
   //Auto = 1 Man = 2
   int operator_mode;
->>>>>>> Stashed changes
   bool initialized;
   bool perform_mission;
   uavMissionModes::uavMissionTypesEnum mission_type;
