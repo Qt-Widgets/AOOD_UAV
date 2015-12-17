@@ -23,7 +23,7 @@ uavAutomaticOperator::~uavAutomaticOperator()
 
 void uavAutomaticOperator::update( uavData* uav_data )
 {
-  uavLogger::getInstance()->log( "Performing Automatic Operator Update" );
+  //uavLogger::getInstance()->log( "Performing Automatic Operator Update" );
 
   duties_provider->performMissionDuty( uav_data );
 }
