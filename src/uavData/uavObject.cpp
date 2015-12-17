@@ -6,11 +6,10 @@
 #include <QPolygonF>
 #include <QPointF>
 #include <QLineF>
-#include <QTimer>
 #include <QGraphicsRectItem>
 
 
-uavObject::uavObject(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
+uavObject::uavObject(QGraphicsItem *parent) : QGraphicsPixmapItem(parent)
 {
     // set the graphics
     setPixmap(QPixmap(":/Pictures/pictures/uav.jpg"));
@@ -39,18 +38,13 @@ uavObject::uavObject(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(par
     QLineF ln(poly_center,uav_center);
     collision_area->setPos(x()+ln.dx(),y()+ln.dy());
 
-    // connect a timer to attack_target
-    QTimer * timer = new QTimer();
-    connect(timer,SIGNAL(timeout()),this,SLOT(go_to_target()));
-    timer->start(1000);
-
     // set attack_dest
     travel_dest = QPointF(0,800);
 }
 
 uavObject::~uavObject() {}
 
-void uavObject::go_to_target()
+void uavObject::updatePosition()
 {
     this->setPos(x()-16,y()-16);
 

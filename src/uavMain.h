@@ -9,6 +9,7 @@
 #define UAVMAIN_H_
 
 #include "src/uavGui/uavButtonActions.h"
+#include <QObject>
 
 class uavDatabase;
 class mapController;
@@ -18,14 +19,15 @@ class uavAutomaticOperator;
 class uavUserOperator;
 class uavObject;
 
-class uavMain : public uavButtonActions
+class uavMain : public QObject,
+                public uavButtonActions
 {
+  Q_OBJECT
+
   public:
 
     uavMain();
     virtual ~uavMain();
-
-    void update();
 
     virtual void switchPrimaryUav( int uav_id );
     virtual void switchOperator();
@@ -40,6 +42,10 @@ class uavMain : public uavButtonActions
     virtual void transmitPictures();
 
     virtual void dropSupplies();
+
+  public slots:
+
+    void updateUavs();
 
   private:
 
