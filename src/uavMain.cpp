@@ -91,8 +91,7 @@ void uavMain::fireMissile()
 
 void uavMain::fireGun()
 {
-  current_uav->uav_data.perform_mission = true;
-  //user_operator->fireGun();
+  user_operator->fireGun();
 }
 
 void uavMain::dropBomb()
@@ -107,7 +106,8 @@ void uavMain::lockTarget()
 
 void uavMain::breakEngage()
 {
-  user_operator->breakEngage();
+  current_uav->uav_data.perform_mission = true;
+  //user_operator->breakEngage();
 }
 
 void uavMain::takePicture()
