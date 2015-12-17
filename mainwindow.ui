@@ -41,6 +41,9 @@
       <string>Supply</string>
      </attribute>
      <widget class="QPushButton" name="pushButton_13">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -59,6 +62,9 @@
       <string>Recon</string>
      </attribute>
      <widget class="QPushButton" name="pushButton_16">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -72,6 +78,9 @@
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_14">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -90,6 +99,9 @@
       <string>Combat</string>
      </attribute>
      <widget class="QPushButton" name="pushButton_15">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -103,6 +115,9 @@
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_17">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -116,6 +131,9 @@
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_18">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -135,8 +153,8 @@
      <rect>
       <x>10</x>
       <y>180</y>
-      <width>421</width>
-      <height>61</height>
+      <width>431</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="html">
@@ -201,6 +219,9 @@ p, li { white-space: pre-wrap; }
     <property name="title">
      <string/>
     </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
     <widget class="QRadioButton" name="radioButton_3">
      <property name="geometry">
       <rect>
@@ -228,6 +249,9 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="text">
       <string>UAV 2</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_5">

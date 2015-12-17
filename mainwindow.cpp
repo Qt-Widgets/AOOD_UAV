@@ -55,16 +55,29 @@ void MainWindow::on_pushButton_17_clicked()
 void MainWindow::on_pushButton_clicked()
 {
   uav_button_actions->startMission();
+  ui->pushButton->setEnabled(false);
 }
 
 void MainWindow::on_radioButton_clicked()
 {
     uav_button_actions->switchOperator(2);
+    ui->pushButton_17->setEnabled(false);
+    ui->pushButton_18->setEnabled(false);
+    ui->pushButton_15->setEnabled(false);
+    ui->pushButton_14->setEnabled(false);
+    ui->pushButton_16->setEnabled(false);
+    ui->pushButton_13->setEnabled(false);
 }
 
 void MainWindow::on_radioButton_2_clicked()
 {
     uav_button_actions->switchOperator(1);
+    ui->pushButton_17->setEnabled(true);
+    ui->pushButton_18->setEnabled(true);
+    ui->pushButton_15->setEnabled(true);
+    ui->pushButton_14->setEnabled(true);
+    ui->pushButton_16->setEnabled(true);
+    ui->pushButton_13->setEnabled(true);
 }
 
 void MainWindow::on_radioButton_3_clicked()
