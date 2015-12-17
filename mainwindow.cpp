@@ -66,3 +66,23 @@ void MainWindow::on_radioButton_2_clicked()
 {
     uav_button_actions->switchOperator(1);
 }
+
+void MainWindow::on_radioButton_3_clicked()
+{
+    uav_button_actions->switchPrimaryUav(1);
+}
+
+void MainWindow::on_radioButton_4_clicked()
+{
+    uav_button_actions->switchPrimaryUav(2);
+}
+
+void MainWindow::on_radioButton_5_clicked()
+{
+    uav_button_actions->switchPrimaryUav(3);
+}
+
+void MainWindow::on_radioButton_6_clicked()
+{
+    uav_button_actions->switchPrimaryUav(4);
+}

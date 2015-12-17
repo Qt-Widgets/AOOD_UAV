@@ -17,9 +17,9 @@
    <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>0</y>
-      <width>191</width>
+      <width>211</width>
       <height>171</height>
      </rect>
     </property>
@@ -27,9 +27,9 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>220</x>
       <y>80</y>
-      <width>231</width>
+      <width>221</width>
       <height>91</height>
      </rect>
     </property>
@@ -133,8 +133,8 @@
    <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>178</y>
+      <x>10</x>
+      <y>180</y>
       <width>421</width>
       <height>61</height>
      </rect>
@@ -150,7 +150,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QRadioButton" name="radioButton_2">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>340</x>
       <y>10</y>
       <width>102</width>
       <height>20</height>
@@ -163,7 +163,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QRadioButton" name="radioButton">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>230</x>
       <y>10</y>
       <width>102</width>
       <height>20</height>
@@ -188,6 +188,74 @@ p, li { white-space: pre-wrap; }
     <property name="text">
      <string>GO!</string>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>211</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QRadioButton" name="radioButton_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>UAV 1</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_4">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>10</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>UAV 2</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>UAV 3</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_6">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>140</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>UAV 4</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
