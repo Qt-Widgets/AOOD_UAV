@@ -5,16 +5,16 @@
 #include "mainwindow.h"
 #include "src/uavMain.h"
 #include "src/uavMath/myrect.h"
-#include "src/mapController.h"
+//#include "src/mapController.h"
 
 
-MapController *mapCtrl;
+//MapController *mapCtrl;
 
 int main(int argc, char *argv[])
 {
-    uavMain* uav_main = new uavMain();
-
     QApplication a(argc, argv);
+
+    uavMain* uav_main = new uavMain();
 
     //create a scene
     QGraphicsScene * scene = new QGraphicsScene();
@@ -30,8 +30,8 @@ int main(int argc, char *argv[])
     //rect->setFlag(QGraphicsItem::ItemIsFocusable);
     //rect->setFocus();
 
-    mapCtrl = new MapController();
-    mapCtrl->show();
+    //mapCtrl = new MapController();
+    //mapCtrl->show();
 
     // add a view
    // QGraphicsView * view = new QGraphicsView();

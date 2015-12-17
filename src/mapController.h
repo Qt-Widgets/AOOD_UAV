@@ -5,10 +5,10 @@
 #include <QMouseEvent>
 #include "src/uavData/uavObject.h"
 
-class MapController : public QGraphicsView
+class mapController : public QGraphicsView
 {
 public:
-    MapController();
+    mapController();
     void mousePressEvent(QMouseEvent *event);
 
     void addUavToScene( uavObject* uav );

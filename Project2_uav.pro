@@ -17,6 +17,7 @@ SOURCES += main.cpp\
     src/uavController/ReconControllerImpl.cpp \
     src/uavController/SupplyControllerImpl.cpp \
     src/uavData/uavDatabase.cpp \
+    src/uavData/uavObject.cpp \
     src/uavFactory/uavFactoryImpl.cpp \
     src/uavLogger/uavLogger.cpp \
     src/uavMath/myrect.cpp \
@@ -25,8 +26,7 @@ SOURCES += main.cpp\
     src/uavOperator/uavUserOperator.cpp \
     src/uavMain.cpp \
     mainwindow.cpp \
-    src/uavController/uavBaseController.cpp \
-    src/mapcontroller.cpp
+    src/mapController.cpp
 
 HEADERS  += src/uavController/automaticDutiesProvider.h \
     src/uavController/CombatController.h \
@@ -38,6 +38,7 @@ HEADERS  += src/uavController/automaticDutiesProvider.h \
     src/uavController/SupplyControllerImpl.h \
     src/uavData/uavDataStruct.h \
     src/uavData/uavDatabase.h \
+    src/uavData/uavObject.h \
     src/uavFactory/uavFactory.h \
     src/uavFactory/uavFactoryImpl.h \
     src/uavGui/uavButtonActions.h \
@@ -48,8 +49,7 @@ HEADERS  += src/uavController/automaticDutiesProvider.h \
     src/uavOperator/uavUserOperator.h \
     src/uavMain.h \
     mainwindow.h \
-    src/uavController/uavBaseController.h \
-    src/mapcontroller.h
+    src/mapController.h
 
 FORMS += \
     mainwindow.ui

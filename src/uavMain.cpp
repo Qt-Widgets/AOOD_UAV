@@ -35,6 +35,7 @@ uavMain::uavMain()
   current_operator = auto_operator;
   current_uav      = uav_database->getUavData( 1 );
   map_controller->setPrimaryUav( current_uav );
+  map_controller->show();
 }
 
 uavMain::~uavMain()

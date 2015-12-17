@@ -3,7 +3,7 @@
 #include <QGraphicsScene>
 
 
-MapController::MapController()
+mapController::mapController()
 {
     // create a scene
     scene = new QGraphicsScene(this);
@@ -18,13 +18,13 @@ MapController::MapController()
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
 
-void MapController::mousePressEvent(QMouseEvent *event)
+void mapController::mousePressEvent(QMouseEvent *event)
 {
   //if left arrow
   //  uav->rotate
 }
 
-void MapController::addUavToScene( uavObject* uav )
+void mapController::addUavToScene( uavObject* uav )
 {
   uav->setPos(250,250);
 
@@ -32,7 +32,7 @@ void MapController::addUavToScene( uavObject* uav )
   scene->addItem(uav);
 }
 
-void MapController::setPrimaryUav( uavObject* uav )
+void mapController::setPrimaryUav( uavObject* uav )
 {
   this->uav = uav;
 }
