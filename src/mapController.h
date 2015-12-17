@@ -16,7 +16,9 @@ public:
 
     QGraphicsScene * scene;
 
-  private:
+    void keyPressEvent(QKeyEvent *event);
+    int direction;
+private:
 
     uavObject* uav;
 };

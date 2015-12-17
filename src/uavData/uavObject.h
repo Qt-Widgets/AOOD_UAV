@@ -19,8 +19,6 @@ class uavObject : public QGraphicsPixmapItem
 
     void updatePosition();
 
-  private:
-
     QGraphicsPolygonItem * collision_area;
     QPointF travel_dest;
 };

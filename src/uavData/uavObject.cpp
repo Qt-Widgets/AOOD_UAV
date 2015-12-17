@@ -12,8 +12,7 @@
 uavObject::uavObject(QGraphicsItem *parent) : QGraphicsPixmapItem(parent)
 {
     // set the graphics
-    setPixmap(QPixmap(":/Pictures/pictures/uav.jpg"));
-
+    setPixmap(QPixmap(":/Pictures/pictures/blue_uav.png"));
 
     // create points vector
     QVector<QPointF> points;
@@ -39,18 +38,22 @@ uavObject::uavObject(QGraphicsItem *parent) : QGraphicsPixmapItem(parent)
     collision_area->setPos(x()+ln.dx(),y()+ln.dy());
 
     // set attack_dest
-    travel_dest = QPointF(0,800);
+    //travel_dest = QPointF(800,0);
 }
 
 uavObject::~uavObject() {}
 
 void uavObject::updatePosition()
 {
-    this->setPos(x()-16,y()-16);
+    this->setPos(x()+ uav_data.Dx, y() + uav_data.Dy);
+    this->uav_data.width = this->x()+16;
+    this->uav_data.height = this->y()+16;
 
+    if(this->uav_data.operator_mode == 2)
+    {
+        QLineF ln(QPointF(x(),y()),travel_dest);
+        int angle = -1 * ln.angle();
 
-    QLineF ln(QPointF(x()-16,y()+16),travel_dest);
-    int angle = -1 * ln.angle();
-
-    this->setRotation(angle);
+        this->setRotation(angle);
+    }
 }

@@ -3,5 +3,6 @@
         <file>pictures/background.png</file>
         <file>pictures/Ny_satview.jpg</file>
         <file>pictures/uav.jpg</file>
+        <file>pictures/blue_uav.png</file>
     </qresource>
 </RCC>

@@ -7,6 +7,7 @@
 
 #include "uavMain.h"
 #include <QTimer>
+#include <QBrush>
 #include "src/uavData/uavDatabase.h"
 #include "mapController.h"
 #include "src/uavFactory/uavFactoryImpl.h"
@@ -36,6 +37,7 @@ uavMain::uavMain() : QObject()
   current_operator = auto_operator;
   current_uav      = uav_database->getUavData( 1 );
   map_controller->setPrimaryUav( current_uav );
+
   map_controller->show();
 }
 
@@ -78,10 +80,16 @@ void uavMain::switchPrimaryUav( int uav_id )
 void uavMain::switchOperator(int new_operator)
 {
     if(new_operator == 2)
+    {
         current_operator = auto_operator;
+        current_uav->uav_data.operator_mode = 2;
+    }
 
     if(new_operator == 1)
+    {
         current_operator = user_operator;
+        current_uav->uav_data.operator_mode = 1;
+    }
 }
 
 void uavMain::fireMissile()
