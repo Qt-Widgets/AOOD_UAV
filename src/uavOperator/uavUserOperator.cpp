@@ -33,15 +33,15 @@ void uavUserOperator::update( uavData* uav_data )
   switch( mission )
   {
     case uavMissionModes::COMBAT_MISSION:
-      uavLogger::getInstance()->log( "Do user combat functionality" );
+      //uavLogger::getInstance()->log( "Do user combat functionality" );
       break;
 
     case uavMissionModes::RECON_MISSION:
-      uavLogger::getInstance()->log( "Do user recon functionality" );
+      //uavLogger::getInstance()->log( "Do user recon functionality" );
       break;
 
     case uavMissionModes::SUPPLY_MISSION:
-      uavLogger::getInstance()->log( "Do user supply functionality" );
+      //uavLogger::getInstance()->log( "Do user supply functionality" );
       break;
 
     default:
