@@ -38,31 +38,6 @@ void mapController::keyPressEvent(QKeyEvent *event)
     {
     case Qt::Key_Up:
 
-        if(uav->uav_data.direction == 0)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(0);
-            uav->transform().translate(-16, -16);
-        }
-        else if (uav->uav_data.direction == 90)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(90);
-            uav->transform().translate(-16, -16);
-        }
-        else if (uav->uav_data.direction == 180)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(180);
-            uav->transform().translate(-16, -16);
-        }
-        else if(uav->uav_data.direction == 270)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(270);
-            uav->transform().translate(-16, -16);
-        }
-
         uav->uav_data.Dy = -3;
         uav->uav_data.Dx = 0;
 
@@ -70,31 +45,6 @@ void mapController::keyPressEvent(QKeyEvent *event)
         break;
 
     case Qt::Key_Down:
-
-        if(uav->uav_data.direction == 0)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(180);
-            uav->transform().translate(-16, -16);
-        }
-        else if (uav->uav_data.direction == 90)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(270);
-            uav->transform().translate(-16, -16);
-        }
-        else if (uav->uav_data.direction == 180)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(0);
-            uav->transform().translate(-16, -16);
-        }
-        else if(uav->uav_data.direction == 270)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(90);
-            uav->transform().translate(-16, -16);
-        }
 
         uav->uav_data.Dy = 3;
         uav->uav_data.Dx = 0;
@@ -104,31 +54,6 @@ void mapController::keyPressEvent(QKeyEvent *event)
 
     case Qt::Key_Left:
 
-        if(uav->uav_data.direction == 0)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(270);
-            uav->transform().translate(-16, -16);
-        }
-        else if (uav->uav_data.direction == 90)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(180);
-            uav->transform().translate(-16, -16);
-        }
-        else if (uav->uav_data.direction == 180)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(90);
-            uav->transform().translate(-16, -16);
-        }
-        else if(uav->uav_data.direction == 270)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(0);
-            uav->transform().translate(-16, -16);
-        }
-
         uav->uav_data.Dy = 0;
         uav->uav_data.Dx = -3;
 
@@ -137,31 +62,6 @@ void mapController::keyPressEvent(QKeyEvent *event)
         break;
 
     case Qt::Key_Right:
-
-        if(uav->uav_data.direction == 0)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(270);
-            uav->transform().translate(-16, -16);
-        }
-        else if (uav->uav_data.direction == 90)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(0);
-            uav->transform().translate(-16, -16);
-        }
-        else if (uav->uav_data.direction == 180)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(90);
-            uav->transform().translate(-16, -16);
-        }
-        else if(uav->uav_data.direction == 270)
-        {
-            uav->transform().translate(16, 16);
-            uav->transform().rotate(180);
-            uav->transform().translate(-16, -16);
-        }
 
         uav->uav_data.Dy = 0;
         uav->uav_data.Dx = 3;

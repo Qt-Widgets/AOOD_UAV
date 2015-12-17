@@ -45,15 +45,16 @@ uavObject::~uavObject() {}
 
 void uavObject::updatePosition()
 {
-    this->setPos(x()+ uav_data.Dx, y() + uav_data.Dy);
     this->uav_data.width = this->x()+16;
     this->uav_data.height = this->y()+16;
 
+    if(this->uav_data.operator_mode == 1)
+    {
+        this->setPos(x()+ uav_data.Dx, y() + uav_data.Dy);
+    }
+
     if(this->uav_data.operator_mode == 2)
     {
-        QLineF ln(QPointF(x(),y()),travel_dest);
-        int angle = -1 * ln.angle();
-
-        this->setRotation(angle);
+        this->setPos(x()+ this->uav_data.randX, y() + this->uav_data.randY);
     }
 }
