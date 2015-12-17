@@ -17,7 +17,7 @@ class uavButtonActions
 
     virtual void startMission() = 0;
     virtual void switchPrimaryUav( int uav_id ) = 0;
-    virtual void switchOperator() = 0;
+    virtual void switchOperator( int operatorMode ) = 0;
 
     virtual void fireMissile() = 0;
     virtual void fireGun() = 0;
