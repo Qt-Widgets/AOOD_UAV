@@ -12,6 +12,8 @@
 #include "CombatController.h"
 #include "automaticDutiesProvider.h"
 
+struct uavData;
+
 ///-----------------------------------------
 ///  This class handles the combat UAV duties.
 ///  It implements the CombatController interface
@@ -47,10 +49,11 @@ class CombatControllerImpl : public CombatController,
     ///  Otherwise it will pass it along to
     ///  the next class in the chain.
     ///-------------------------------------
-    virtual void performMissionDuty(
-                   uavMissionModes::uavMissionTypesEnum mission_type );
+    virtual void performMissionDuty( uavData* uav_data );
 
   private:
+
+    void performMission( uavData* uav_data );
 
     automaticDutiesProvider* next_duty_provider;
 };

@@ -91,7 +91,8 @@ void uavMain::fireMissile()
 
 void uavMain::fireGun()
 {
-  user_operator->fireGun();
+  current_uav->uav_data.perform_mission = true;
+  //user_operator->fireGun();
 }
 
 void uavMain::dropBomb()

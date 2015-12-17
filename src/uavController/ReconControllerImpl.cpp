@@ -7,7 +7,8 @@
 //
 
 #include "ReconControllerImpl.h"
-#include "../uavLogger/uavLogger.h"
+#include "src/uavLogger/uavLogger.h"
+#include "src/uavData/uavDataStruct.h"
 
 ReconControllerImpl::ReconControllerImpl( automaticDutiesProvider* next_duty_provider )
 {
@@ -18,6 +19,30 @@ ReconControllerImpl::~ReconControllerImpl()
 {
 }
 
+void ReconControllerImpl::performMission( uavData* uav_data )
+{
+  if( uav_data->perform_mission )
+  {
+    if( uav_data->current_pic_count == max_pictures )
+    {
+      transmitPicture();
+      uav_data->current_pic_count = 0;
+      uav_data->perform_mission   = false;
+    }
+    else if( (uav_data->current_pic_count % 5) == 0 )
+    {
+      transmitPicture();
+      takePicture();
+      uav_data->current_pic_count++;
+    }
+    else
+    {
+      takePicture();
+      uav_data->current_pic_count++;
+    }
+  }
+}
+
 void ReconControllerImpl::takePicture()
 {
   uavLogger::getInstance()->log( "Taking picture" );
@@ -25,14 +50,13 @@ void ReconControllerImpl::takePicture()
 
 void ReconControllerImpl::transmitPicture()
 {
-  uavLogger::getInstance()->log( "Picture is being transmitted" );
+  uavLogger::getInstance()->log( "Pictures are being transmitted" );
 }
 
-void ReconControllerImpl::performMissionDuty(
-                   uavMissionModes::uavMissionTypesEnum mission_type )
+void ReconControllerImpl::performMissionDuty( uavData* uav_data )
 {
-  if( mission_type == uavMissionModes::RECON_MISSION )
-    uavLogger::getInstance()->log( "Perform the automatic recon mission" );
+  if( uav_data->mission_type == uavMissionModes::RECON_MISSION )
+    performMission( uav_data );
   else
-    next_duty_provider->performMissionDuty( mission_type );
+    next_duty_provider->performMissionDuty( uav_data );
 }

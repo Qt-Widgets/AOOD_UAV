@@ -12,6 +12,8 @@
 #include "SupplyController.h"
 #include "automaticDutiesProvider.h"
 
+struct uavData;
+
 ///-----------------------------------------
 ///  This class handles the supply UAV duties.
 ///  It implements the SupplyController interface
@@ -42,11 +44,11 @@ class SupplyControllerImpl : public SupplyController,
     ///  this class will handle the responsibility.
     ///  Otherwise the mission isn't handled.
     ///-------------------------------------
-    virtual void performMissionDuty(
-                   uavMissionModes::uavMissionTypesEnum mission_type );
+    virtual void performMissionDuty( uavData* uav_data );
 
   private:
 
+    void performMission( uavData* uav_data );
 };
 
 #endif /* SuppplyController_h */

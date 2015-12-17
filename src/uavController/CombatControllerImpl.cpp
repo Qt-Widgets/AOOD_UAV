@@ -7,7 +7,8 @@
 //
 
 #include "CombatControllerImpl.h"
-#include "../uavLogger/uavLogger.h"
+#include "src/uavLogger/uavLogger.h"
+#include "src/uavData/uavDataStruct.h"
 
 CombatControllerImpl::CombatControllerImpl(
                    automaticDutiesProvider* next_duty_provider )
@@ -17,6 +18,18 @@ CombatControllerImpl::CombatControllerImpl(
 
 CombatControllerImpl::~CombatControllerImpl()
 {
+}
+
+void CombatControllerImpl::performMission( uavData* uav_data )
+{
+  if( uav_data->perform_mission )
+  {
+    lockOnTarget();
+    fireMissile();
+    fireGuns();
+    dropBombs();
+    uav_data->perform_mission = false;
+  }
 }
 
 void CombatControllerImpl::fireMissile()
@@ -48,11 +61,10 @@ void CombatControllerImpl::breakEngage()
   uavLogger::getInstance()->log( "Engagement Broken" );
 }
 
-void CombatControllerImpl::performMissionDuty(
-                   uavMissionModes::uavMissionTypesEnum mission_type )
+void CombatControllerImpl::performMissionDuty( uavData* uav_data )
 {
-  if( mission_type == uavMissionModes::COMBAT_MISSION )
-    uavLogger::getInstance()->log( "Perform the automatic combat mission" );
+  if( uav_data->mission_type == uavMissionModes::COMBAT_MISSION )
+    performMission( uav_data );
   else
-    next_duty_provider->performMissionDuty( mission_type );
+    next_duty_provider->performMissionDuty( uav_data );
 }

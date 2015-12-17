@@ -8,7 +8,8 @@
 #ifndef AUTOMATICDUTIESPROVIDER_H_
 #define AUTOMATICDUTIESPROVIDER_H_
 
-#include "MissionModes.h"
+struct uavData;
+
 
 ///------------------------------------------
 ///  This class provides the interface for
@@ -29,8 +30,7 @@ class automaticDutiesProvider
     ///  passed in so that the right member
     ///  of the chain acts on it.
     ///-------------------------------------
-    virtual void performMissionDuty(
-                   uavMissionModes::uavMissionTypesEnum mission_type ) = 0;
+    virtual void performMissionDuty( uavData* uav_data ) = 0;
 };
 
 #endif /* AUTOMATICDUTIESPROVIDER_H_ */

@@ -7,7 +7,8 @@
 //
 
 #include "SupplyControllerImpl.h"
-#include "../uavLogger/uavLogger.h"
+#include "src/uavLogger/uavLogger.h"
+#include "src/uavData/uavDataStruct.h"
 
 SupplyControllerImpl::SupplyControllerImpl()
 {
@@ -16,17 +17,24 @@ SupplyControllerImpl::SupplyControllerImpl()
 SupplyControllerImpl::~SupplyControllerImpl()
 {
 }
+void SupplyControllerImpl::performMission( uavData* uav_data )
+{
+  if( uav_data->perform_mission )
+  {
+    dropSupply();
+    uav_data->perform_mission = false;
+  }
+}
 
 void SupplyControllerImpl::dropSupply()
 {
-  uavLogger::getInstance()->log( "Supply is being dropped" );
+  uavLogger::getInstance()->log( "Supplies are being dropped!" );
 }
 
-void SupplyControllerImpl::performMissionDuty(
-                   uavMissionModes::uavMissionTypesEnum mission_type )
+void SupplyControllerImpl::performMissionDuty( uavData* uav_data )
 {
-  if( mission_type == uavMissionModes::SUPPLY_MISSION )
-    uavLogger::getInstance()->log( "Perform the automatic supply mission" );
+  if( uav_data->mission_type == uavMissionModes::SUPPLY_MISSION )
+    performMission( uav_data );
   else
     uavLogger::getInstance()->log( "Unhandled Mission Type." );
 }

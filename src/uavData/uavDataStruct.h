@@ -22,7 +22,9 @@ struct uavData
   bool night_vision_enabled;
   int uav_id;
   int missile_inventory;
+  int current_pic_count;
   bool initialized;
+  bool perform_mission;
   uavMissionModes::uavMissionTypesEnum mission_type;
 
 

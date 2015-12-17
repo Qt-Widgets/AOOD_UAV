@@ -12,6 +12,8 @@
 #include "ReconController.h"
 #include "automaticDutiesProvider.h"
 
+struct uavData;
+
 ///-----------------------------------------
 ///  This class handles the recon UAV duties.
 ///  It implements the ReconController interface
@@ -44,11 +46,14 @@ class ReconControllerImpl : public ReconController,
     ///  Otherwise it will pass it along to
     ///  the next class in the chain.
     ///-------------------------------------
-    virtual void performMissionDuty(
-                   uavMissionModes::uavMissionTypesEnum mission_type );
+    virtual void performMissionDuty( uavData* uav_data );
 
   private:
 
+    void performMission( uavData* uav_data );
+
     automaticDutiesProvider* next_duty_provider;
+
+    static const int max_pictures = 20;
 };
 #endif /* ReconController_h */
