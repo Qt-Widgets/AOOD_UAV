@@ -9,6 +9,7 @@
 #define UAVUSEROPERATOR_H_
 
 #include "uavOperator.h"
+#include "src/uavGui/uavButtonActions.h"
 
 class uavFactory;
 class SupplyController;
@@ -18,11 +19,12 @@ struct uavData;
 
 ///-----------------------------------------
 ///  This class handles the user operations
-///  of the UAV. It implements the userButtonActions
-///  interface so that the GUI knows what buttons
-///  actions can be done.
+///  of the UAV. It implements the uavButtonActions
+///  interface. Implementing that interface allows
+///  for this class to be part of the proxy pattern.
 ///-----------------------------------------
-class uavUserOperator : public uavOperator
+class uavUserOperator : public uavOperator,
+                        public uavButtonActions
 {
   public:
 
@@ -31,16 +33,20 @@ class uavUserOperator : public uavOperator
 
     virtual void update( uavData* uav_data );
 
-    void fireMissile();
-    void fireGun();
-    void dropBomb();
-    void lockTarget();
-    void breakEngage();
+    virtual void startMission() {}
+    virtual void switchPrimaryUav( int uav_id ) {}
+    virtual void switchOperator( int operatorMode ) {}
 
-    void takePicture();
-    void transmitPictures();
+    virtual void fireMissile();
+    virtual void fireGun();
+    virtual void dropBomb();
+    virtual void lockTarget();
+    virtual void breakEngage();
 
-    void dropSupplies();
+    virtual void takePicture();
+    virtual void transmitPictures();
+
+    virtual void dropSupplies();
 
   private:
 

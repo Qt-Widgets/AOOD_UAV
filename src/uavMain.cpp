@@ -51,6 +51,13 @@ uavMain::~uavMain()
   current_uav      = 0;
 }
 
+///-----------------------------------------
+///  This is the main loop of the UAVs. It
+///  gets called whenever the timer expires.
+///  This function handles updating all the
+///  UAVs position and if they are ready to
+///  perform their mission
+///-----------------------------------------
 void uavMain::updateUavs()
 {
   uavObject* uav;
@@ -62,6 +69,12 @@ void uavMain::updateUavs()
   }
 }
 
+///-----------------------------------------
+///  When the user hits GO on the GUI, this
+///  function gets called. This function
+///  creates a timer that calls the updateUavs
+///  function whenever it runs times out.
+///-----------------------------------------
 void uavMain::startMission()
 {
   // connect a timer to attack_target
